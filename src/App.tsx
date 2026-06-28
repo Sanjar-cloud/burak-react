@@ -1,5 +1,3 @@
-
-import './css/app.css'
 import { Switch, Route, Link, useLocation } from "react-router-dom";
 import { HomePage } from './app/screens/homePage';
 import { ProductsPage } from './app/screens/productsPage';
@@ -8,7 +6,9 @@ import { UserPage } from './app/screens/usersPage';
 import { HomeNavbar } from './app/components/headers/HomeNavbar';
 import { OtherNavbar } from './app/components/headers/OtherNavbar';
 import { Footer } from './app/components/footer';
-
+import "./css/app.css";
+import "../src/css/navbar.css";
+import { HelpPage } from "./app/screens/helpPage";
 
 function App() {
   const location = useLocation();
@@ -27,6 +27,9 @@ function App() {
           </Route>
            <Route path="/member-page">
             <UserPage />
+          </Route> 
+           <Route path="/help">
+            <HelpPage />
           </Route> 
           <Route path="/">
             <HomePage />
