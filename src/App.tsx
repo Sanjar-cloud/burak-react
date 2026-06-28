@@ -1,26 +1,51 @@
 
-import {  Box, Button, Container, Stack, Typography } from '@mui/material'
 import './css/app.css'
-import {RippleBadge } from "../public/app/MaterialTheme/styled";
+import { Switch, Route, Link } from "react-router-dom";
+import { HomePage } from './app/screens/homePage';
+import { ProductsPage } from './app/screens/productsPage';
+import { OrdersPage } from './app/screens/ordersPage';
+import { UserPage } from './app/screens/usersPage';
+
 
 function App() {
   return ( 
-    <Container  sx={{ background: "orange" }}>
-     <Stack direction={"column"}>
-       <Box sx={{ my: 4 }}>
-         <Typography variant="h4" component={"h4"}>
-           Create React App on TypeScript with REDUX
-         </Typography>
-       </Box>
-       <Box>
-         <RippleBadge badgeContent={4}>
-            <Button variant="contained">Contained</Button>
-        </RippleBadge>
-        </Box>
-     </Stack>
-   </Container>
-  )
+     <div>
+        <nav>
+          <ul>
+             <li>
+              <Link to="/">HomePage</Link>
+            </li>
+            <li>
+              <Link to="/products">ProductsPage</Link>
+            </li>
+            <li>
+              <Link to="/orders">OrdersPage</Link>
+            </li>
+            <li>
+              <Link to="/member-page">UserPage</Link>
+            </li>
+          </ul>
+        </nav>
+
+      
+        <Switch>
+          <Route path="/products">
+            <ProductsPage />
+          </Route>
+          <Route path="/orders">
+            <OrdersPage />
+          </Route>
+           <Route path="/member-page">
+            <UserPage />
+          </Route> 
+          <Route path="/">
+            <HomePage />
+          </Route>
+        </Switch>
+      </div>
+  );
 }
 
+ 
 export default App
 
