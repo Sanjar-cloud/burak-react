@@ -1949,7 +1949,7 @@
   dependencies:
     "@babel/runtime" "^7.28.6"
 
-"@mui/joy@^5.0.0-beta.24":
+"@mui/joy@^5.0.0-beta.52":
   version "5.0.0-beta.52"
   resolved "https://registry.yarnpkg.com/@mui/joy/-/joy-5.0.0-beta.52.tgz#9c7cd9629603089c80e8f8f7b78a41534ef06e91"
   integrity sha512-e8jQanA5M1f/X52mJrw0UIW8Er7EAHuLuigmGFw7yIsAgIluhIP4rZ7JcbVrUi6z5Gk0weC9QWUUtjLejAbO8g==
