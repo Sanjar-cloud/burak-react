@@ -58,7 +58,7 @@ export default function OrdersPage() {
                   />
                 </div>
               </div>
-              <span className={"order-user-name"}>Sanjar</span>
+              <span className={"order-user-name"}>Nolan</span>
               <span className={"order-user-prof"}>User</span>
             </Box>
             <Box className={"liner"}></Box>
