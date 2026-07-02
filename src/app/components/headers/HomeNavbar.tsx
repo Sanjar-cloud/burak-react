@@ -3,7 +3,7 @@
 import Basket from "./Basket";
 
 export default function HomeNavbar() {
-    const authMember = null;
+    const authMember = true;
 
  return (
    <div className="home-navbar">
@@ -60,7 +60,7 @@ export default function HomeNavbar() {
            ) : (
            <img 
            className="user-avatar"
-           src={"/icons/default-user.svg"}
+           src={"/img/Sanjar.webp"}
            aria-haspopup={"true"}
            />
          )}
