@@ -1,5 +1,5 @@
 import { Switch, Route, useLocation } from "react-router-dom";
-import   HomePage  from './app/screens/homePage';
+// import   HomePage  from './app/screens/homePage';
 import   ProductsPage  from './app/screens/productsPage';
 import   OrdersPage  from './app/screens/ordersPage';
 import   HelpPage from "./app/screens/helpPage";
@@ -10,6 +10,7 @@ import   Footer  from '../src/app/components/footer';
 import "./css/app.css";
 import "../src/css/navbar.css";
 import "./css/footer.css";
+import Test from "./app/screens/Test";
 
 function App() {
   const location = useLocation();
@@ -33,7 +34,8 @@ function App() {
             <HelpPage />
           </Route> 
           <Route path="/">
-            <HomePage />
+             <Test />
+            {/* <HomePage /> */}
           </Route>
         </Switch>
         <Footer  />
