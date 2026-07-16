@@ -10,7 +10,7 @@ import   Footer  from '../src/app/components/footer';
 import "./css/app.css";
 import "../src/css/navbar.css";
 import "./css/footer.css";
-import Test from "./app/screens/Test";
+import HomePage from "./app/screens/homePage";
 
 function App() {
   const location = useLocation();
@@ -34,8 +34,7 @@ function App() {
             <HelpPage />
           </Route> 
           <Route path="/">
-             <Test />
-            {/* <HomePage /> */}
+            <HomePage />
           </Route>
         </Switch>
         <Footer  />
