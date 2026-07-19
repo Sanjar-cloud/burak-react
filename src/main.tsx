@@ -6,16 +6,22 @@ import './css/index.css'
 import App from './App.tsx'
 import theme from './app/MaterialTheme/index.ts'
 import { BrowserRouter as Router } from "react-router-dom";
+import { Provider } from "react-redux";
+import { store } from "./app/store.ts";
+
 
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
-    <ThemeProvider theme={theme}>
-      <CssBaseline />
-      <Router>
+    <Provider store={store}>
+      <ThemeProvider theme={theme}>
+        <CssBaseline />
+        <Router>
           <App />
-      </Router>
-    </ThemeProvider>
+        </Router>
+      </ThemeProvider>
+    </Provider>
   </StrictMode>,
 )
+
 
