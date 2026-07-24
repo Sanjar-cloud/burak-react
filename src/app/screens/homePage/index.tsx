@@ -28,6 +28,11 @@ export default function HomePage() {
  const { setPopularDishes } = actionDispatch(useDispatch());
  const { popularDishes } = useSelector(popularDishesRetriever);
 
+
+
+
+ 
+
   useEffect(() => {}, []);
   
   return <div className={ "homepage "}>
