@@ -227,7 +227,6 @@ const chooseDishHandler = (id: string) => {
                       >
                         <div className={"product-sale"}>{sizeVolume } </div>
                         <Button className={"shop-btn"} onClick={(e) => {
-                          console.log("pressed");
                           onAdd({
                             _id: product._id,
                             quantity: 1,
