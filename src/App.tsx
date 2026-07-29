@@ -19,7 +19,7 @@ function App() {
   const location = useLocation();
   const { cartItems, onAdd, onRemove, onDelete, onDeleteAll, } = useBasket();
   const [signupOpen, setSignupOpen] = useState<boolean>(false);
-  const [loginOpen, setLoginOpen] = useState<boolean>(true);
+  const [loginOpen, setLoginOpen] = useState<boolean>(false);
 
 /** handlers **/
 
@@ -29,18 +29,26 @@ const handleLoginClose = () => setLoginOpen(false);
 
   return ( 
      <>
-       {location.pathname === "/" ? <HomeNavbar 
+       {location.pathname === "/" ?
+        <HomeNavbar 
        cartItems={cartItems}
         onAdd={onAdd} 
         onRemove={onRemove} 
          onDelete={onDelete} 
-         onDeleteAll={onDeleteAll} />   : <OtherNavbar
-         
+         onDeleteAll={onDeleteAll}
+         setSignupOpen={setSignupOpen}
+         setLoginOpen={setLoginOpen}
+          />  
+          
+          : <OtherNavbar
           cartItems={cartItems}
           onAdd={onAdd} 
           onRemove={onRemove}
           onDelete={onDelete}
-          onDeleteAll={onDeleteAll}  />} 
+          onDeleteAll={onDeleteAll} 
+
+          setLoginOpen={setLoginOpen}
+           />} 
         <Switch>
           <Route path="/products">
             <ProductsPage onAdd={onAdd}/>
