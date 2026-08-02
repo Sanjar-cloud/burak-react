@@ -13,10 +13,10 @@ import AuthenticationModal from "./app/components/auth";
 import { sweetErrorHandling, sweetTopSuccessAlert } from "./lib/sweetAlert";
 import MemberService from "./app/services/MemberService";
 import { Messages } from "./lib/config";
+import { useGlobals } from "./app/hooks/useGlobals";
 import "./css/app.css";
 import "../src/css/navbar.css";
 import "./css/footer.css";
-import { useGlobals } from "./app/hooks/useGlobals";
 
 
 function App() {

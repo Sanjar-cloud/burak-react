@@ -24,7 +24,7 @@ interface BasketProps {
 
 export default function Basket(props: BasketProps) {
   const {cartItems,  onAdd, onRemove, onDelete, onDeleteAll} = props;
-  const {authMember} = useGlobals();
+  const {authMember, setOrderBuilder} = useGlobals();
   const history = useHistory();
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
   const open = Boolean(anchorEl);
@@ -54,7 +54,7 @@ const totalPrice = (itemsPrice + shippingCost).toFixed(1);
 
     onDeleteAll();
 
-    // REFRESH VIA CONTEXT
+    setOrderBuilder(new Date());
     history.push("/orders");
   } catch (err) {
     console.log(err);
@@ -82,7 +82,7 @@ const totalPrice = (itemsPrice + shippingCost).toFixed(1);
         id="account-menu"
         open={open}
         onClose={handleClose}
-        // onClick={handleClose}
+        onClick={handleClose}
         PaperProps={{
           elevation: 0,
           sx: {
@@ -175,3 +175,7 @@ const totalPrice = (itemsPrice + shippingCost).toFixed(1);
     </Box>
   );
 }
+function setOrderBuilder(arg0: Date) {
+  throw new Error("Function not implemented.");
+}
+
