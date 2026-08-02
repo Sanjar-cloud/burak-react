@@ -1,10 +1,12 @@
 import type { Member } from "./member";
+import type { Order } from "./order";
 import type { Product } from "./product";
 
 /** React app Sate **/
 export interface AppRootState {
   homePage: HomePageState;
   productsPage: ProductsPageState;
+  ordersPage: OrdersPageState;
 }
 
 /** homePage  **/
@@ -24,3 +26,8 @@ export interface ProductsPageState {
 
 
 /** Orders Page  **/
+export interface OrdersPageState {
+  pausedOrders: Order[];
+  processOrders: Order[];
+  finishedOrders: Order[];
+}

@@ -57,7 +57,7 @@ public async signup(input: MemberInput): Promise<Member> {
 public async login(input: LoginInput): Promise<Member> {
   try {
     const url = this.path + "/member/login";
-    const result = await axios.post(url, input,  );
+    const result = await axios.post(url, input,  { withCredentials: true });
     console.log("login:", result);
 
     const member: Member = result.data.member;

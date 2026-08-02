@@ -4,17 +4,36 @@ import Tabs from "@mui/material/Tabs";
 import Tab from "@mui/material/Tab";
 import TabContext from "@mui/lab/TabContext";
 import LocationOnIcon from "@mui/icons-material/LocationOn";
+import { useDispatch } from "react-redux";
+import type { Dispatch } from "@reduxjs/toolkit";
 import PausedOrders from "./PausedOrders";
 import ProcessOrders from "./ProcessOrders";
 import FinishedOrders from "./FinishedOrders";
+import { setFinishedOrders, setPausedOrders, setProcessOrders } from "./slice";
+import type { Order } from "../../../lib/types/order";
 import "../../../css/order.css";
 
+
+/** redux slice & selector */
+const actionDispatch = (dispatch: Dispatch) => ({
+  setPausedOrders: (data: Order[]) => dispatch(setPausedOrders(data)),
+  setProcessOrders: (data: Order[]) => dispatch(setProcessOrders(data)),
+  setFinishedOrders: (data: Order[]) => dispatch(setFinishedOrders(data)),
+});
+
+
 export default function OrdersPage() {
+  const { setPausedOrders, setProcessOrders,setFinishedOrders } = actionDispatch(useDispatch());
   const [value, setValue] = useState("1");
+
+ 
+ /**  handlers **/
+
 
   const handleChange = (_e: SyntheticEvent, newValue: string) => {
     setValue(newValue);
   };
+
 
   return (
     <div className={"order-page"}>
