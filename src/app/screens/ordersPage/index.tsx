@@ -16,6 +16,8 @@ import OrderService from "../../services/OrderService";
 import { useGlobals } from "../../hooks/useGlobals";
 import { useHistory } from "react-router-dom";
 import "../../../css/order.css";
+import { serverApi } from "../../../lib/config";
+import { MemberType } from "../../../lib/enums/member.enum";
 
 /** redux slice & selector */
 const actionDispatch = (dispatch: Dispatch) => ({
@@ -94,25 +96,35 @@ const handleChange = (_e: SyntheticEvent, newValue: string) => {
             <Box className={"member-box"}>
               <div className={"order-user-img"}>
                 <img
-                  src={"/img/Sanjar.webp"}
+                  src={
+                    authMember?.memberImage
+                        ? `${serverApi}/${authMember.memberImage}`
+                        : "/icons/default-user.svg" 
+                  }
                   className={"order-user-avatar"}
                 />
                 <div className={"order-user-icon-box"}>
                   <img
-                    src={"/icons/user-badge.svg"}
+                    src={
+                      authMember?.memberType === MemberType.RESTAURANT 
+                         ? "/icons/restaurant.svg"
+                         : "/icons/user-badge.svg"
+                    }
                     className={"order-user-prof-img"}
                   />
                 </div>
               </div>
-              <span className={"order-user-name"}>Nolan</span>
-              <span className={"order-user-prof"}>User</span>
+              <span className={"order-user-name"}>{authMember?.memberNick}</span>
+              <span className={"order-user-prof"}>{authMember?.memberType}</span>
             </Box>
             <Box className={"liner"}></Box>
             <Box className={"order-user-address"}>
               <div style={{ display: "flex" }}>
                 <LocationOnIcon />
               </div>
-              <div className={"spec-address-txt"}>Do not exist</div>
+              <div className={"spec-address-txt"}>{authMember?.memberDesc 
+              ? authMember.memberDesc 
+              : "Do not exist"}</div>
             </Box>
           </Box>
           <Box className={"order-info-box"} sx={{ mt: "15px" }}>
